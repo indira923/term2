@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Enter new engineer</h1>
+    <form action="/success" method="post">  
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="age" placeholder="Age">
+        <input type="text" name="height" placeholder="Height (inches)">
+        <input type="text" name="group" placeholder="Group">
+        <input type="Submit" value="Submit">
+    </form>
+
+    <h1>Engineers Table</h1>
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Height</th>
+          <th>Group</th>
+        </tr>
+        {% for engineer in engineers %}
+            <tr>
+                <td>{{engineer["name"]}}</td>
+                <td>{{engineer["age"]}}</td>
+                <td>{{engineer["height"]}}</td>
+                <td>{{engineer["group"]}}</td>
+            </tr>
+        {% endfor %}
+      </table>  
+</body>
+</html>
